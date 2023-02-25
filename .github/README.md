@@ -5,7 +5,7 @@
 </p>
 <br />
 <p align="center">
-  <img src="./.github/banner.png" alt="Home" />
+  <img src="./.github/banner.png" alt="Imagem do desafio da Rocketseat"/>
 </p>
 <p align="center">
   Desafio do Discover Rocket News

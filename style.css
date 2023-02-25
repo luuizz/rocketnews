@@ -37,7 +37,7 @@ main{
 aside {
     height: 100vh;
     grid-area: aside;
-    background-image: url('/assets/read_news.jpg');
+    background-image: url("./assets/read_news.jpg");
     background-position: right center;
     background-repeat: no-repeat;
     background-size: cover;
