@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-y: hidden;
+    width: 100%;
+}
+
+:root {
+  --body-bg-color: #121214;
+  --text-color: #E1E1E6;
+  --title-color: #04D361;
+  --form-color: #A8A8A8;
+  --bg-button-color: #8257e5;
+  --alpha: 0.8;
+}
+
+body {
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "main aside";
+}
+
+/* Configurações do layout */
+
+main{
+    grid-area: main;
+}
+
+aside {
+    height: 100vh;
+    grid-area: aside;
+    background-image: url('/assets/read_news.jpg');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Estilização do conteúdo */
+
+.container {
+    padding-left: 90px;
+    padding-right: 36px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.left {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+}
+
+.container .left .logo {
+    width: 50%;
+    margin: 50px 0px 100px;
+}
+
+.texts {
+    padding-right: 120px;
+}
+
+.texts h1, h2, p {
+    padding-bottom: 16px;
+}
+
+h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: var(--title-color);
+}
+
+h2 {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 24px;
+}
+
+p {
+    font-family: 'League Spartan', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 138.73%;
+    color: rgba(var(--text-color), var(--alpha));
+}
+
+/* Formulário */
+.form {
+    margin: 50px 0;
+}
+
+label {
+    font-family: 'League Spartan', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 138.73%;
+    color: var(--form-color);
+    padding-bottom: 21px;
+    display: block;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.form-group input {
+    min-height: 64px;
+    padding: 0 16px;
+    width: calc(50vw + 18px);
+    border-left: 5px solid var(--title-color);
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.form-group button {
+    width: 64px;
+    height: 64px;
+    fill: var(--text-color);
+    background-color: var(--bg-button-color);
+    border: 0;
+    transition: all 0.5s;
+}
+
+.form-group  button:hover {
+    background-color: var(--body-bg-color);
+    cursor: pointer;
+}
+
+.form-group input label {
+    color: #6A6A6A;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    
+}
+
+::input {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+::-webkit-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.input:focus, .input:focus-visible {
+    outline: none;
+}
+
+input[type="text"]{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+/* Link */
+.link {
+    margin-top: 90px;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--bg-button-color);
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 138.73%;
+    font-family: 'League Spartan', sans-serif;
+}
+
+ion-icon {
+    font-size: 31px;
+    position: relative;
+    top: 10px;
+    transition: .5s;
+}
+
+a:hover ion-icon {
+    transform: translateX(8px);
+}
+
+
+
+
+/* Layout responsivo */
+
+@media (max-width: 1440px) {
+    .texts {
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .container .left .logo {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        max-width: 50%;
+    }
+    
+    .link {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .container .left .logo {
+        max-width: 75%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .container .left .logo{
+        max-width: 100%;
+        width: 80%;
+    }
+
+    .texts {
+        padding-right: 0;
+    }
+
+    .form-group {
+        width: 90%;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+
+    
+    aside {
+        display: none;
+    }
+}
